@@ -1,7 +1,5 @@
 package com.muzzy.petclinic.model;
 
-import com.muzzy.petclinic.model.PetType;
-
 import java.time.LocalDate;
 
 public class Pet {

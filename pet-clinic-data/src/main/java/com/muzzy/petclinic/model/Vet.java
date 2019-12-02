@@ -1,5 +1,5 @@
 package com.muzzy.petclinic.model;
 
-public class Vet extends Person{
+public class Vet extends Person {
 
 }
