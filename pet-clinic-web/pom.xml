@@ -39,6 +39,12 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>com.muzzy</groupId>
+            <artifactId>pet-clinic-data</artifactId>
+            <version>0.0.3-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 
