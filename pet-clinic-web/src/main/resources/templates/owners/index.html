@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
 <head>
     <meta charset="UTF-8">
     <title>This is an Index Page of Owners</title>
 </head>
 <body>
 <!--/*@thymesVar id="owner" type="com.muzzy.petclinic.model.Owner"*/-->
-<h1><p th:text="'Pet Clinic Owner List Page'">x</p></h1>
-<table>
+<h2><p th:text="'Pet Clinic Owner List Page'">x</p></h2>
+<table class="table table-striped">
     <tr>
         <th>Id</th>
         <th>First Name</th>

@@ -1,9 +1,11 @@
 package com.muzzy.petclinic.services.map;
 
 import com.muzzy.petclinic.model.BaseEntity;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
 
+@Slf4j
 public abstract class AbstractServiceMap<T extends BaseEntity,ID extends Long> { // ID extends Long, because without it i cant get a max. Because ID is like a Long i cant change map behaviour
     protected Map<Long, T> map = new HashMap<>();
 
@@ -17,9 +19,8 @@ public abstract class AbstractServiceMap<T extends BaseEntity,ID extends Long> {
         if(object != null){
             if(object.getId() == null) {
                 object.setId(getNextId());
-                return map.put(object.getId(), object);
             }
-            return object;
+            return map.put(object.getId(), object);
         } else {
             throw new RuntimeException("Object cannot be null");
         }
@@ -31,8 +32,13 @@ public abstract class AbstractServiceMap<T extends BaseEntity,ID extends Long> {
     void delete(T object){
         map.entrySet().removeIf(x -> x.getValue().equals(object));
     }
+
     private Long getNextId(){
-        if(map.isEmpty()) { return 1L;} else {
+        if(map.isEmpty()) {
+            System.out.println("Dodaje 1");
+            return 1L;
+            } else {
+            System.out.println("Dodaje nastepne!");
             return Collections.max(map.keySet()) + 1;
         }
     }
