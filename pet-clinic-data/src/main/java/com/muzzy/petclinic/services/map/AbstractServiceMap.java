@@ -35,10 +35,8 @@ public abstract class AbstractServiceMap<T extends BaseEntity,ID extends Long> {
 
     private Long getNextId(){
         if(map.isEmpty()) {
-            System.out.println("Dodaje 1");
             return 1L;
             } else {
-            System.out.println("Dodaje nastepne!");
             return Collections.max(map.keySet()) + 1;
         }
     }
