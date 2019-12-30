@@ -40,4 +40,14 @@ public class Pet extends BaseEntity{
     public void setPetType(PetType petType) {
         this.petType = petType;
     }
+
+    @Override
+    public String toString() {
+        return "Pet{" +
+                "name='" + name + '\'' +
+                ", petType=" + petType.getId() + " , " +petType.getName() +
+                ", owner=" + owner +
+                ", brithDay=" + brithDay +
+                '}';
+    }
 }
