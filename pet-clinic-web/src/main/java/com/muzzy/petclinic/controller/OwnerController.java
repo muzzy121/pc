@@ -24,4 +24,8 @@ public class OwnerController {
         ownerService.findAll().stream().forEach(x ->  log.info(x.toString()));
         return "owners/index";
     }
+    @RequestMapping("/find")
+    public String findOwners() {
+        return "underconstruction";
+    }
 }
