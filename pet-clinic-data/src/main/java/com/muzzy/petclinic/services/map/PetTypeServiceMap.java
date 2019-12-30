@@ -2,9 +2,11 @@ package com.muzzy.petclinic.services.map;
 
 import com.muzzy.petclinic.model.PetType;
 import com.muzzy.petclinic.services.PetTypeService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class PetTypeServiceMap extends AbstractServiceMap<PetType, Long> implements PetTypeService {
 
     @Override
