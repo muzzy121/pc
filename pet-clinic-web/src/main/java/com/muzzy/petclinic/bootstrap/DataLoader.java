@@ -29,7 +29,12 @@ public class DataLoader implements CommandLineRunner {
     //Runs after Sprig will finish create context
     @Override
     public void run(String... args) throws Exception {
+        if (petTypeService.findAll().size() == 0 ) {
+            loadData();
+        }
+    }
 
+    private void loadData() {
         PetType dog = new PetType();
         dog.setName("Dog");
         PetType savedDogType = petTypeService.save(dog);
@@ -74,31 +79,31 @@ public class DataLoader implements CommandLineRunner {
         owner2.getPets().add(tore);
         ownerService.save(owner2);
 
-        Specialty catSpecialist = new Specialty();
-        catSpecialist.setDescription("Heals cats");
-//        specialtyService.save(catSpecialist);
+        Specialty radiology = new Specialty();
+        radiology.setDescription("Radiology");
+//        specialtyService.save(radiology);
 
-        Specialty dogSpecialist = new Specialty();
-        dogSpecialist.setDescription("Heals dogs");
-        specialtyService.save(dogSpecialist);
+        Specialty surgery = new Specialty();
+        surgery.setDescription("Surgery");
+        specialtyService.save(surgery);
+
+        Specialty dentistry = new Specialty();
+        dentistry.setDescription("Dentist");
+        specialtyService.save(dentistry);
 
         Vet vet = new Vet();
 //        vet.setId(1L);
         vet.setFirstName("Pawel");
         vet.setLastName("Mazur");
-        vet.getSpecialtySet().add(catSpecialist);
+        vet.getSpecialtySet().add(radiology);
 
         Vet vet2 = new Vet();
 //        vet2.setId(2L);
         vet2.setFirstName("Justyna");
         vet2.setLastName("Mazur");
-        vet2.getSpecialtySet().add(dogSpecialist);
+        vet2.getSpecialtySet().add(surgery);
 
         vetService.save(vet);
         vetService.save(vet2);
-
-
-
-
     }
 }
