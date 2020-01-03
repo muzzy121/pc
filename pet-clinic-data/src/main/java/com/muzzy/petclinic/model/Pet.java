@@ -2,11 +2,14 @@ package com.muzzy.petclinic.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Pet extends BaseEntity{
     @Column(name="name")
     private String name;
+
     @ManyToOne
     @JoinTable(name="type_id")
     private PetType petType;
@@ -14,8 +17,12 @@ public class Pet extends BaseEntity{
     @ManyToOne
     @JoinTable(name="owner_id")
     private Owner owner;
+
     @Column(name="birth_day")
     private LocalDate brithDay;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
+    private Set<Visit> visits = new HashSet<>();
 
     public String getName() {
         return name;
@@ -48,6 +55,15 @@ public class Pet extends BaseEntity{
 
     public void setPetType(PetType petType) {
         this.petType = petType;
+    }
+
+    public Set<Visit> getVisits() {
+        return visits;
+    }
+
+    public Pet setVisits(Set<Visit> visits) {
+        this.visits = visits;
+        return this;
     }
 
     @Override
