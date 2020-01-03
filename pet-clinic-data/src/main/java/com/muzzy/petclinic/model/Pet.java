@@ -1,11 +1,20 @@
 package com.muzzy.petclinic.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
 public class Pet extends BaseEntity{
+    @Column(name="name")
     private String name;
+    @ManyToOne
+    @JoinTable(name="type_id")
     private PetType petType;
+
+    @ManyToOne
+    @JoinTable(name="owner_id")
     private Owner owner;
+    @Column(name="birth_day")
     private LocalDate brithDay;
 
     public String getName() {
