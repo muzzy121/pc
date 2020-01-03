@@ -9,6 +9,7 @@ import java.util.Set;
 public class PetType extends BaseEntity {
     @Column(name="name")
     private String name;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "petType")
     private Set<Pet> pets = new HashSet<>();
 
