@@ -12,7 +12,7 @@
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration spring_boot_spring_config_name="messages" spring_boot_spring_config_custom_files="file://$MODULE_DIR$/application.properties" />
     </facet>
     <facet type="web" name="Web">
       <configuration>
