@@ -4,9 +4,10 @@ import com.muzzy.petclinic.model.Visit;
 import com.muzzy.petclinic.services.PetService;
 import com.muzzy.petclinic.services.PetTypeService;
 import com.muzzy.petclinic.services.VisitService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class VisitServiceMap extends AbstractServiceMap<Visit,Long> implements VisitService {
 //    private PetService petService;
 //    private PetTypeService petTypeService;
