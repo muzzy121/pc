@@ -1,21 +1,14 @@
 package com.muzzy.petclinic.services.map;
 
 import com.muzzy.petclinic.model.Visit;
-import com.muzzy.petclinic.services.PetService;
-import com.muzzy.petclinic.services.PetTypeService;
 import com.muzzy.petclinic.services.VisitService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 @Service
+@Profile({"default","map"})
 public class VisitServiceMap extends AbstractServiceMap<Visit,Long> implements VisitService {
-//    private PetService petService;
-//    private PetTypeService petTypeService;
-//
-//    public VisitServiceMap(PetService petService, PetTypeService petTypeService) {
-//        this.petService = petService;
-//        this.petTypeService = petTypeService;
-//    }
 
     @Override
     public Set<Visit> findAll() {

@@ -27,7 +27,6 @@ public class DataLoader implements CommandLineRunner {
         this.visitService = visitService;
     }
 
-
     //Runs after Sprig will finish create context
     @Override
     public void run(String... args) throws Exception {
@@ -83,7 +82,7 @@ public class DataLoader implements CommandLineRunner {
 
         Specialty radiology = new Specialty();
         radiology.setDescription("Radiology");
-//        specialtyService.save(radiology);
+        specialtyService.save(radiology);
 
         Specialty surgery = new Specialty();
         surgery.setDescription("Surgery");

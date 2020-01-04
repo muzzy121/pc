@@ -5,11 +5,13 @@ import com.muzzy.petclinic.model.Pet;
 import com.muzzy.petclinic.services.OwnerService;
 import com.muzzy.petclinic.services.PetService;
 import com.muzzy.petclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default","map"})
 public class OwnerServiceMap extends AbstractServiceMap<Owner, Long> implements OwnerService {
     private PetTypeService petTypeService;
     private PetService petService;
