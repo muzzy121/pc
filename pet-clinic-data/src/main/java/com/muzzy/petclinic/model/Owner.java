@@ -1,13 +1,20 @@
 package com.muzzy.petclinic.model;
 
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="owners")
 public class Owner extends Person {
+
     @Column(name="address")
     private String address;
     @Column(name="city")
@@ -18,40 +25,13 @@ public class Owner extends Person {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
 
-    public String getAddress() {
-        return address;
-    }
-
-    public Owner setAddress(String address) {
+    @Builder
+    public Owner(Long id, String firstName, String lastName, String address, String city, String telephone, Set<Pet> pets) {
+        super(id, firstName, lastName);
         this.address = address;
-        return this;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public Owner setCity(String city) {
         this.city = city;
-        return this;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public Owner setTelephone(String telephone) {
         this.telephone = telephone;
-        return this;
-    }
-
-    public Set<Pet> getPets() {
-        return pets;
-    }
-
-    public Owner setPets(Set<Pet> pets) {
         this.pets = pets;
-        return this;
     }
 }
 

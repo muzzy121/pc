@@ -1,9 +1,16 @@
 package com.muzzy.petclinic.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name="types")
 public class PetType extends BaseEntity {
@@ -12,14 +19,6 @@ public class PetType extends BaseEntity {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "petType")
     private Set<Pet> pets = new HashSet<>();
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     @Override
     public String toString() {
