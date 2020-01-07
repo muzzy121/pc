@@ -1,17 +1,17 @@
 package com.muzzy.petclinic.services.map;
 
-import com.muzzy.petclinic.model.Pet;
-import com.muzzy.petclinic.services.PetService;
+import com.muzzy.petclinic.model.Specialty;
+import com.muzzy.petclinic.services.SpecialtyService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
 @Service
 @Profile({"default","map"})
-public class PetServiceMap extends AbstractServiceMap<Pet, Long> implements PetService {
+public class SpecialtyServiceMap extends AbstractServiceMap<Specialty, Long> implements SpecialtyService {
+
     @Override
-    public Set<Pet> findAll() {
+    public Set<Specialty> findAll() {
         return super.findAll();
     }
 
@@ -21,22 +21,17 @@ public class PetServiceMap extends AbstractServiceMap<Pet, Long> implements PetS
     }
 
     @Override
-    public void delete(Pet object) {
+    public void delete(Specialty object) {
         super.delete(object);
     }
 
     @Override
-    public Pet save(Pet object) {
+    public Specialty save(Specialty object) {
         return super.save(object);
     }
 
     @Override
-    public Pet findById(Long id) {
+    public Specialty findById(Long id) {
         return super.findById(id);
-    }
-
-    @Override
-    public Pet findByName(String name) {
-        return null;
     }
 }
