@@ -8,6 +8,8 @@ import com.muzzy.petclinic.services.PetTypeService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -65,6 +67,10 @@ public class OwnerServiceMap extends AbstractServiceMap<Owner, Long> implements 
 
     @Override
     public Owner findByLastName(String lastName) {
-        return null;
+        return super.findAll().stream()
+                .filter(owner1 -> owner1.getLastName() == lastName)
+                .findFirst()
+                .orElse(null);
+
     }
 }
