@@ -8,8 +8,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>pet-clinic-web</artifactId>
-
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -30,7 +28,6 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
-
         <!-- webjars -->
         <dependency>
             <groupId>org.webjars</groupId>
@@ -115,22 +112,18 @@
                     </dependency>
                 </dependencies>
             </plugin>
-
-<!--            test plugin-->
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M4</version>
                 <dependencies>
                     <dependency>
-                        <groupId>org.junit.platform</groupId>
-                        <artifactId>junit-platform-surefire-provider</artifactId>
-                        <version>1.3.2</version>
-                        <scope>test</scope>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-junit-platform</artifactId>
+                        <version>3.0.0-M4</version>
                     </dependency>
                 </dependencies>
             </plugin>
         </plugins>
     </build>
-
 
 </project>
