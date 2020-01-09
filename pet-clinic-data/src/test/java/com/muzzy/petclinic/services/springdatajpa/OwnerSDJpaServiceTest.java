@@ -87,6 +87,7 @@ class OwnerSDJpaServiceTest {
     @Test
     void delete() {
         ownerSDJpaService.delete(owner);
+        //default is times 1 - thats why you dont need to add information, like in line 97
         verify(ownerRepository).delete(any());
     }
 
