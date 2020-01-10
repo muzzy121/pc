@@ -24,7 +24,9 @@ public class OwnerController {
         ownerService.findAll().stream().forEach(x ->  log.info(x.toString()));
         return "owners/index";
     }
-    @RequestMapping("/find")
+
+    // TODO: 2020-01-10 Need to fix this mapping, just make no sense 
+    @RequestMapping("/owners/find")
     public String findOwners() {
         return "underconstruction";
     }
